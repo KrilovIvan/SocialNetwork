@@ -1,0 +1,61 @@
+.contaner {
+  display: flex;
+  flex-direction: row;
+  height: 180px;
+}
+
+.imgCont {
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image {
+  width: 130px;
+  border-radius: 10px;
+}
+
+.button {
+  width: 130px;
+  height: 40px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.txtContaner {
+  width: 810px;
+  background-color: #2d2c2c;
+  border-radius: 5px;
+  margin: 0 0 0 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "name country"
+    "status country";
+  grid-template-columns: 550px 240px;
+  grid-template-rows: 50px 50px;
+  row-gap: 60px;
+}
+
+.name {
+  grid-area: name;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.status {
+  grid-area: status;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.country {
+  grid-area: country;
+  text-align: end;
+  font-size: 22px;
+  font-weight: 700;
+  align-self: center;
+}

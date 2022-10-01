@@ -1,0 +1,26 @@
+.statusBar {
+  height: 100px;
+  grid-area: stat;
+  font-size: 20px;
+  background-color: transparent;
+  border: solid #484848 1px;
+  color: white;
+  border-radius: 5px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.inputCont {
+  height: 80px;
+  width: 480px;
+}
+
+.input {
+  background-color: #484848;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  height: inherit;
+  width: inherit;
+}

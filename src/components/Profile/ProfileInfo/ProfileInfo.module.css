@@ -1,0 +1,86 @@
+.contaner {
+  border-radius: 5px;
+  background-color: #232323;
+  border: solid #484848 1px;
+  padding-bottom: 10px;
+}
+
+.backImgCont img {
+  width: 100%;
+  height: 300px;
+  /* border: solid #484848 3px; */
+}
+
+.descriptionBlock {
+  height: 200px;
+}
+
+.stata {
+  width: 1000px;
+  display: grid;
+  grid-template-areas: "stat mp vid";
+  grid-template-columns: 500px 100px 100px;
+  grid-gap: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.statusBar {
+  height: 100px;
+  grid-area: stat;
+  font-size: 20px;
+  background-color: transparent;
+  border: solid #484848 1px;
+  color: white;
+  border-radius: 5px;
+  /* background-color: rgb(219, 219, 194); */
+  /* padding-left: 50px; */
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.myPhotos,
+.myVideos {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100px;
+  /* background-color: rgb(219, 219, 194); */
+  background-color: transparent;
+  border: solid #484848 1px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.myPhotos {
+  grid-area: mp;
+  background-image: url(https://ognisveta.ru/upload/iblock/4a2/4a29ef3be58168227c6f57680fc3576b.jpg);
+  background-size: cover;
+}
+
+.myVideos {
+  grid-area: vid;
+}
+
+.avaImg {
+  height: 200px;
+  width: 200px;
+  z-index: 1;
+  margin-top: -100px;
+  margin-left: 50px;
+  /* border: solid skyblue 3px; */
+  border: solid #484848 3px;
+}
+.userName {
+  display: flex;
+  padding-left: 30px;
+  height: 100px;
+  align-items: center;
+  margin-left: 250px;
+  margin-top: -110px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+}

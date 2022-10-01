@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+.appWrapper {
+  display: grid;
+  width: 1200px;
+  margin: auto;
+  grid-template-areas: "nav cont";
+  grid-template-columns: 200px 1fr;
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+
+.appWrapperContent {
+  grid-area: cont;
+  background: #141414;
+}

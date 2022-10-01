@@ -1,0 +1,73 @@
+.box {
+  background: #141414;
+  grid-area: nav;
+  display: grid;
+  grid-template-areas:
+    "navIt"
+    "frnd";
+  grid-template-rows: min-content;
+  grid-gap: 50px;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+.item {
+  color: white;
+}
+.navBox {
+  grid-area: navIt;
+}
+.active {
+  color: skyblue;
+}
+
+.imageSize {
+  height: 30px;
+  margin-right: 5px;
+}
+
+.item,
+.active {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.friendBox {
+  grid-area: frnd;
+}
+
+.titFrnd {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+.frndGrid {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.friend {
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: white;
+}
+
+.friend img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.links {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.links:hover {
+  background-color: #232323;
+}

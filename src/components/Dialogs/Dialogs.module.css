@@ -1,0 +1,66 @@
+.dialogCont {
+  height: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "dl ms"
+    "dl ta";
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 600px 2fr;
+  background-color: #232323;
+  border: solid #484848 1px;
+  color: white;
+  border-radius: 5px;
+}
+
+.dialogs {
+  grid-area: dl;
+  border-right: solid #484848 1px;
+}
+
+.messages {
+  grid-area: ms;
+  height: 600px;
+}
+
+.textArCont {
+  grid-area: ta;
+  display: grid;
+  grid-template-areas: "txt btn";
+}
+
+.messages,
+.textArCont {
+  margin-left: 5px;
+}
+
+.textAr {
+  grid-area: txt;
+  width: 600px;
+
+  border-radius: 5px;
+  resize: none;
+  background: transparent;
+  color: white;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  overflow: auto;
+}
+
+.butSend {
+  grid-area: btn;
+  width: 100px;
+  margin-right: 5px;
+  background-color: skyblue;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+}
+
+.butSend:hover {
+  cursor: pointer;
+  background-color: rgb(116, 180, 205);
+}

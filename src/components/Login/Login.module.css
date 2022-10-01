@@ -1,0 +1,10 @@
+.loginContaner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* color: white; */
+}
+
+.loginContaner h1 {
+  color: white;
+}

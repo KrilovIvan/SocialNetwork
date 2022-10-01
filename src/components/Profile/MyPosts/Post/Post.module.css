@@ -1,0 +1,67 @@
+.postCont {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-areas: "msg eventCont";
+  grid-template-columns: 10fr 2fr;
+  /* background-color: #232323; */
+  background-color: transparent;
+  border: solid #484848 1px;
+}
+
+.item {
+  display: grid;
+  grid-area: msg;
+  grid-template-areas: "img mess";
+  grid-template-columns: 110px 1fr;
+  color: white;
+}
+
+.imgCont {
+  grid-area: img;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100px;
+  border-radius: 50px;
+}
+
+.messageCont {
+  margin-left: 10px;
+  display: grid;
+  grid-area: mess;
+  align-items: center;
+}
+
+.eventContaner {
+  grid-area: eventCont;
+  display: grid;
+  grid-template-areas: "button like";
+  align-items: flex-end;
+  justify-content: end;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.likeCont {
+  grid-area: like;
+}
+
+.button {
+  grid-area: button;
+  margin-right: 5px;
+}
+
+.likeCont,
+.button {
+  color: white;
+  background-color: #2d2c2c;
+  border-radius: 20px;
+  border: none;
+  height: 35px;
+}
+
+.likeCont:hover,
+.button:hover {
+  background-color: #333232;
+  cursor: pointer;
+}

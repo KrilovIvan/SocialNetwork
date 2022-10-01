@@ -1,0 +1,51 @@
+.contaner {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #232323;
+  border: solid #484848 1px;
+  margin-bottom: 10px;
+}
+
+.textCont {
+  display: flex;
+  flex-direction: row;
+}
+
+.textarea {
+  width: 50%;
+  border-radius: 5px;
+  resize: none;
+  background: transparent;
+  color: white;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  overflow: auto;
+}
+
+.postsBlock {
+  padding-left: 10px;
+  color: white;
+}
+
+.posts {
+  padding: 10px;
+}
+.buttonSpace {
+  margin-left: 5px;
+}
+
+.button {
+  margin-right: 5px;
+  background-color: skyblue;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgb(116, 180, 205);
+}
