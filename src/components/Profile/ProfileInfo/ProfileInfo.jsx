@@ -25,7 +25,10 @@ const ProfileInfo = (props) => {
         </div>
         <div className={profileInfo.stata}>
           {/* <div className={profileInfo.statusBar}>{props.profile?.aboutMe}</div> */}
-          <ProfileStatus aboutMe={props.profile?.aboutMe} />
+          <ProfileStatus
+            status={props.status}
+            updateUserStatus={props.updateUserStatus}
+          />
           <div
             className={profileInfo.myPhotos}
             onClick={() => {

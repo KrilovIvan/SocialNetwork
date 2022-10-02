@@ -1,6 +1,10 @@
 import React from "react";
 import ProfileContaner from "./ProfileContaner";
-import { setUsersProfileActionCreator } from "../../redux/profileReducer";
+import {
+  getUserStatus,
+  setUsersProfileActionCreator,
+  updateUserStatus,
+} from "../../redux/profileReducer";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import withAuthNavRep from "../../hoc/withAuthNavRep";
@@ -14,10 +18,13 @@ let AuthNavRepComp = withAuthNavRep(ProfileContaner);
 
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
+  status: state.profilePage.status,
 });
 
 let withRouterProfile = withRouter(AuthNavRepComp);
 
 export default connect(mapStateToProps, {
   setUsersProfile: setUsersProfileActionCreator,
+  getUserStatus,
+  updateUserStatus,
 })(withRouterProfile);
