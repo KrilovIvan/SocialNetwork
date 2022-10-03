@@ -8,8 +8,6 @@ const ProfileStatus = (props) => {
   useEffect(() => {
     setStatus(props.status);
   }, [props.status]);
-  debugger;
-  console.log(status);
   const activateEditMode = () => {
     if (!editMode) {
       setEditMode(true);

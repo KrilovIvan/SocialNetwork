@@ -6,7 +6,7 @@ class ProfileContaner extends React.Component {
   componentDidMount() {
     let userId = this.props.match.params.userId;
     if (!userId) {
-      userId = 1050;
+      userId = 25875;
     }
     usersAPI.getProfile(userId).then((data) => {
       this.props.setUsersProfile(data);

@@ -47,7 +47,6 @@ const profileReducer = (state = initialState, action) => {
       break;
     }
     case UPDATE_NEW_POST_TEXT: {
-      console.log(action.newText);
       return { ...state, newText: action.newText };
     }
     case SET_USERS_PROFILE: {
