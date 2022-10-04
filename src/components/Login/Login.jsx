@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Login.module.css";
-import { Formik } from "formik";
+import { ErrorMessage, Formik } from "formik";
 import * as yup from "yup";
 import { login } from "../../redux/authReducer";
 import { connect } from "react-redux";
@@ -9,16 +9,17 @@ const LoginForm = (props) => {
   const validationSchema = yup.object().shape({
     email: yup
       .string()
-      .typeError("Должно быть строкой")
-      .required("Обязательно для заполнения"),
+      .email("Invalid email")
+      .typeError("Must be a string")
+      .required("Required to fill in"),
     password: yup
       .string()
-      .typeError("Должно быть строкой")
-      .required("Обязательно для заполнения"),
+      .typeError("Must be a string")
+      .required("Required to fill in"),
     confirmPasword: yup
       .string()
-      .oneOf([yup.ref("password")], "Пароли не совпадают!")
-      .required("Обязательно для заполнения"),
+      .oneOf([yup.ref("password")], "Passwords don't match!")
+      .required("Required to fill in"),
   });
 
   return (
@@ -30,8 +31,14 @@ const LoginForm = (props) => {
         isRemember: false,
       }}
       validateOnBlur
-      onSubmit={(values) => {
-        props.login(values.email, values.password, values.isRemember);
+      onSubmit={(values, { setSubmitting, setStatus }) => {
+        props.login(
+          values.email,
+          values.password,
+          values.isRemember,
+          setStatus
+        );
+        setSubmitting(false);
       }}
       validationSchema={validationSchema}
     >
@@ -44,9 +51,11 @@ const LoginForm = (props) => {
         isValid,
         handleSubmit,
         dirty,
+        status,
       }) => {
         return (
           <div className={s.formContaner}>
+            {status}
             <div>
               <div>
                 <input
@@ -59,9 +68,9 @@ const LoginForm = (props) => {
                   placeholder="E-mail"
                 />
               </div>
-              {touched.email && errors.email && (
-                <span className={s.error}>{errors.email}</span>
-              )}
+              <span className={s.error}>
+                <ErrorMessage name="email" />
+              </span>
             </div>
 
             <div>
@@ -76,9 +85,9 @@ const LoginForm = (props) => {
                   placeholder="Password"
                 />
               </div>
-              {touched.password && errors.password && (
-                <span className={s.error}>{errors.password}</span>
-              )}
+              <span className={s.error}>
+                <ErrorMessage name="password" />
+              </span>
             </div>
 
             <div>
@@ -93,9 +102,9 @@ const LoginForm = (props) => {
                   placeholder="Confirm Pasword"
                 />
               </div>
-              {touched.confirmPasword && errors.confirmPasword && (
-                <span className={s.error}>{errors.confirmPasword}</span>
-              )}
+              <span className={s.error}>
+                <ErrorMessage name="confirmPasword" />
+              </span>
             </div>
 
             <div className={s.checkCont}>
@@ -126,6 +135,7 @@ const LoginForm = (props) => {
 };
 
 const Login = (props) => {
+  console.log(props);
   if (props.isAuth) {
     return <Navigate replace to={"/profile"} />;
   }

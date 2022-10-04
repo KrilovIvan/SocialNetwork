@@ -34,12 +34,13 @@ export const getAuth = () => {
   };
 };
 
-export const login = (email, password, rememberMe) => {
+export const login = (email, password, rememberMe, setStatus) => {
   return (dispatch) => {
     usersAPI.login(email, password, rememberMe).then((response) => {
-      console.log(response);
       if (response.data.resultCode === 0) {
         dispatch(getAuth());
+      } else {
+        setStatus(response.data.messages);
       }
     });
   };
