@@ -9,7 +9,7 @@ import DialogsContaner from "./components/Dialogs/DialogsContaner";
 import NavbarContaner from "./components/Navbar/NavbarContaner";
 import FindUsersContaner from "./components/FindUsers/FindUsersContaner";
 import ProfileContanerCont from "./components/Profile/ProfileContanerCont";
-import { Login } from "./components/Login/Login";
+import Login from "./components/Login/Login";
 const App = (props) => {
   return (
     <BrowserRouter>

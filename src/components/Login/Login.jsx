@@ -2,9 +2,12 @@ import React from "react";
 import s from "./Login.module.css";
 import { Formik } from "formik";
 import * as yup from "yup";
-const LoginForm = () => {
+import { login } from "../../redux/authReducer";
+import { connect } from "react-redux";
+import { Navigate } from "react-router-dom";
+const LoginForm = (props) => {
   const validationSchema = yup.object().shape({
-    login: yup
+    email: yup
       .string()
       .typeError("Должно быть строкой")
       .required("Обязательно для заполнения"),
@@ -21,14 +24,14 @@ const LoginForm = () => {
   return (
     <Formik
       initialValues={{
-        login: "",
+        email: "",
         password: "",
         confirmPasword: "",
         isRemember: false,
       }}
       validateOnBlur
       onSubmit={(values) => {
-        console.log(values);
+        props.login(values.email, values.password, values.isRemember);
       }}
       validationSchema={validationSchema}
     >
@@ -48,16 +51,16 @@ const LoginForm = () => {
               <div>
                 <input
                   type="text"
-                  name="login"
+                  name="email"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.login}
                   className={s.box}
-                  placeholder="Login"
+                  placeholder="E-mail"
                 />
               </div>
-              {touched.login && errors.login && (
-                <span className={s.error}>{errors.login}</span>
+              {touched.email && errors.email && (
+                <span className={s.error}>{errors.email}</span>
               )}
             </div>
 
@@ -122,13 +125,22 @@ const LoginForm = () => {
   );
 };
 
-export const Login = (props) => {
+const Login = (props) => {
+  if (props.isAuth) {
+    return <Navigate replace to={"/profile"} />;
+  }
   return (
     <div className={s.contaner}>
       <div className={s.loginContaner}>
         <h1>Login</h1>
-        <LoginForm />
+        <LoginForm login={props.login} />
       </div>
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({
+  isAuth: state.auth.isAuth,
+});
+
+export default connect(mapStateToProps, { login })(Login);
