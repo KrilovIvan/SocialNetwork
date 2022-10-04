@@ -135,7 +135,6 @@ const LoginForm = (props) => {
 };
 
 const Login = (props) => {
-  console.log(props);
   if (props.isAuth) {
     return <Navigate replace to={"/profile"} />;
   }
