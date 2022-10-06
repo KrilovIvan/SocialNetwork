@@ -21,6 +21,9 @@ export const usersAPI = {
       .get(`users?page=${currentPage}&count=${pageSize}`)
       .then((response) => response.data);
   },
+  getFriends() {
+    return instance.get("users?friend=true").then((response) => response.data);
+  },
   getAuth() {
     return instance.get("auth/me").then((response) => response.data);
   },

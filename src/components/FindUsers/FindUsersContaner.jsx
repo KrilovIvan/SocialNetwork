@@ -12,6 +12,7 @@ import {
   deleteFollow,
   postFollow,
 } from "../../redux/findusersReducer";
+import { getFriends } from "../../redux/navbarReducer";
 import FUser from "./FUser/FUser";
 import s from "./FindUsers.module.css";
 import preloader from "../../preloader.gif";
@@ -77,6 +78,7 @@ class FindUsers extends React.Component {
           isFollowingMass={this.props.isFollowingMass}
           deleteFollow={this.props.deleteFollow}
           postFollow={this.props.postFollow}
+          getFriends={this.props.getFriends}
         />
       );
     });
@@ -140,6 +142,7 @@ const FindUsersContaner = connect(mapStateToProps, {
   getNewPage,
   deleteFollow,
   postFollow,
+  getFriends,
 })(AuthNavRepComp);
 
 export default FindUsersContaner;

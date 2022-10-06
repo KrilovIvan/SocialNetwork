@@ -13,16 +13,21 @@ const Navbar = (props) => {
       </div>
     </NavLink>
   ));
-
-  const friendsElem = props.friends.map((frn) => (
-    <div className={navbars.friend}>
-      <img
-        src="https://ognisveta.ru/upload/iblock/4a2/4a29ef3be58168227c6f57680fc3576b.jpg"
-        alt="Avatar"
-      />
-      {frn.name}
-    </div>
-  ));
+  let countFr = 0;
+  const friendsElem = props.friends.map((frn) => {
+    if (countFr < 6) {
+      countFr++;
+      return (
+        <div className={navbars.friend}>
+          <img
+            src="https://ognisveta.ru/upload/iblock/4a2/4a29ef3be58168227c6f57680fc3576b.jpg"
+            alt="Avatar"
+          />
+          {frn.name}
+        </div>
+      );
+    }
+  });
 
   return (
     <div className={navbars.box}>
@@ -32,7 +37,16 @@ const Navbar = (props) => {
       <div className={navbars.friendBox}>
         <div className={navbars.titFrnd}>Friends</div>
         <div className={navbars.frndGrid}>
-          <div>{friendsElem}</div>
+          {friendsElem.length === 0 ? (
+            <div className={navbars.noFrnd}>"You hadn`t friends"</div>
+          ) : (
+            <>
+              <div>{friendsElem}</div>
+              <NavLink to={"/friends"} className={navbars.friendsLink}>
+                See all friends
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </div>

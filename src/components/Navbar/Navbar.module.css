@@ -71,3 +71,14 @@
 .links:hover {
   background-color: #232323;
 }
+
+.friendsLink {
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.noFrnd {
+  color: white;
+  font-weight: bold;
+}

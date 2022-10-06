@@ -10,6 +10,7 @@ import NavbarContaner from "./components/Navbar/NavbarContaner";
 import FindUsersContaner from "./components/FindUsers/FindUsersContaner";
 import ProfileContanerCont from "./components/Profile/ProfileContanerCont";
 import Login from "./components/Login/Login";
+import FriendsContaner from "./components/Friends/FriendsContaner";
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -29,6 +30,7 @@ const App = (props) => {
             <Route element={<Music />} path="/music" />
             <Route element={<Settings />} path="/settings" />
             <Route element={<FindUsersContaner />} path="/findusers" />
+            <Route element={<FriendsContaner />} path="/friends" />
           </Routes>
         </div>
       </div>
