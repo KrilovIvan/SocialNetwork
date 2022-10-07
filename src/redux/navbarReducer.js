@@ -50,7 +50,6 @@ let initialState = {
 const navbarReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_FRIENDS: {
-      console.log("friends", action);
       return {
         ...state,
         friends: [...action.friendsData],

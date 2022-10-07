@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import navbars from "./Navbar.module.css";
+import Switcher from "../supplies/Switcher/Switcher";
 const Navbar = (props) => {
+  const [isToggled, setToggle] = useState(false);
   const activeLink = (navData) =>
     navData.isActive ? navbars.active : navbars.item;
 
@@ -47,6 +50,17 @@ const Navbar = (props) => {
               </NavLink>
             </>
           )}
+        </div>
+      </div>
+      <div className={navbars.switcherCont}>
+        <div className={navbars.switcher}>
+          {isToggled ? "Темная тема" : "Светлая тема"}
+          <Switcher
+            rounded={true}
+            onToggle={() => {
+              setToggle(!isToggled);
+            }}
+          />
         </div>
       </div>
     </div>

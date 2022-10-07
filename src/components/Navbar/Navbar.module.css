@@ -4,7 +4,8 @@
   display: grid;
   grid-template-areas:
     "navIt"
-    "frnd";
+    "frnd"
+    "switch";
   grid-template-rows: min-content;
   grid-gap: 50px;
   padding-left: 20px;
@@ -33,6 +34,7 @@
 
 .friendBox {
   grid-area: frnd;
+  height: fit-content;
 }
 
 .titFrnd {
@@ -50,14 +52,14 @@
 .friend {
   display: flex;
   flex-direction: row;
-  width: min-content;
+  width: 100px;
   margin-bottom: 5px;
   font-size: 20px;
   color: white;
 }
 
 .friend img {
-  width: 40px;
+  width: 65px;
   border-radius: 50%;
 }
 
@@ -81,4 +83,21 @@
 .noFrnd {
   color: white;
   font-weight: bold;
+}
+
+.switcherCont {
+  grid-area: switch;
+  display: flex;
+  align-items: flex-end;
+}
+
+.switcher {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
 }

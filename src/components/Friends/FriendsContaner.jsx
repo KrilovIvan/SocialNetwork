@@ -15,10 +15,8 @@ import { useEffect } from "react";
 
 const FriendsContaner = (props) => {
   // useEffect(() => {
-  //   if (props.friends.length === 0) {
-  //     props.getFriends();
-  //   }
-  // }, [props.isFollowingMass]);
+  // props.getFriends();
+  // }, [props.friends]);
 
   const findFriendsElem = () => {
     let findFriendsElem = props.friends.map((e) => {
