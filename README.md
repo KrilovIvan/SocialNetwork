@@ -1,9 +1,6 @@
 # Приложение "SocialNetwork" разработано для того, чтобы поддерживать контакты между студентами "НИУ Московский Авиационный институт"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Поддерживаемые функции
-------------------
 
 - **Простота**: Интерфейс разработан очень просто и понятно.
 -  **Архитектура**: При разработке архитектуры поддерживались основные паттерны проектирования .
@@ -14,6 +11,8 @@ Prettier: все, что может быть отформатировано ро
 
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
